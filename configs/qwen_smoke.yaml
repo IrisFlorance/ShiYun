@@ -1,0 +1,7 @@
+extends: low_vram.yaml
+autoencoder_train:
+  epochs: 1
+  accumulation: 4
+diffusion_train:
+  epochs: 2
+  patience: 2

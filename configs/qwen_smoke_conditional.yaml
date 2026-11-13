@@ -1,0 +1,3 @@
+extends: qwen_smoke.yaml
+diffusion:
+  conditional: true

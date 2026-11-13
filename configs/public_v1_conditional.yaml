@@ -1,0 +1,3 @@
+extends: public_v1.yaml
+diffusion:
+  conditional: true

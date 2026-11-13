@@ -1,0 +1,3 @@
+extends: low_vram.yaml
+diffusion:
+  conditional: true

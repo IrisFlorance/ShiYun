@@ -1,0 +1,35 @@
+extends: default.yaml
+backend: mock
+device: cpu
+precision: fp32
+encoder:
+  max_length: 48
+  batch_size: 4
+  shard_size: 8
+  width: 32
+decoder:
+  max_length: 48
+  width: 48
+  lora_rank: 0
+  gradient_checkpointing: false
+latent:
+  tokens: 4
+  dim: 12
+  width: 32
+diffusion:
+  timesteps: 32
+  steps: 8
+  width: 48
+  depth: 2
+autoencoder_train:
+  batch_size: 4
+  accumulation: 2
+  epochs: 5
+  patience: 5
+  lr: 0.005
+diffusion_train:
+  batch_size: 8
+  accumulation: 1
+  epochs: 10
+  patience: 5
+  lr: 0.002

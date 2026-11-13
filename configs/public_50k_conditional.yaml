@@ -1,0 +1,3 @@
+extends: public_50k.yaml
+diffusion:
+  conditional: true

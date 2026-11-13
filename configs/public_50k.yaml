@@ -1,0 +1,13 @@
+extends: public_v1.yaml
+encoder:
+  batch_size: 16
+  shard_size: 256
+autoencoder_train:
+  epochs: 6
+  log_every: 100
+  checkpoint_every: 150
+diffusion_train:
+  epochs: 20
+  batch_size: 48
+  log_every: 150
+  checkpoint_every: 250

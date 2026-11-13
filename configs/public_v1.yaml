@@ -1,0 +1,25 @@
+extends: low_vram.yaml
+device: cuda
+encoder:
+  max_length: 192
+  batch_size: 12
+  shard_size: 160
+decoder:
+  max_length: 160
+  lora_rank: 16
+autoencoder_train:
+  batch_size: 4
+  accumulation: 4
+  epochs: 6
+  lr: 0.0002
+  patience: 3
+  log_every: 30
+diffusion:
+  width: 384
+  depth: 4
+diffusion_train:
+  batch_size: 48
+  accumulation: 1
+  epochs: 40
+  lr: 0.00025
+  patience: 8

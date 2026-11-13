@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aesthetic-latent-diffusion"
+version = "0.1.0"
+requires-python = ">=3.11,<3.13"
+dependencies = ["torch>=2.7,<3", "numpy==1.26.4", "PyYAML==6.0.3"]
+
+[project.optional-dependencies]
+qwen = ["transformers==5.0.0", "huggingface-hub==1.4.1", "tokenizers==0.22.2", "safetensors==0.7.0", "peft==0.18.1", "accelerate==1.12.0"]
+ui = ["gradio==5.49.1"]
+eval = ["umap-learn==0.5.11"]
+corpus = ["beautifulsoup4==4.12.2"]
+
+[dependency-groups]
+dev = ["pytest==9.1.1", "ruff>=0.11,<1"]
+
+[tool.setuptools.packages.find]
+include = ["ald*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+markers = ["integration: uses locally available Qwen weights"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100

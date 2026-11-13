@@ -1,0 +1,43 @@
+backend: qwen
+seed: 31415
+device: auto
+precision: auto
+encoder:
+  model: Qwen/Qwen3-Embedding-0.6B
+  revision: 97b0c614be4d77ee51c0cef4e5f07c00f9eb65b3
+  max_length: 256
+  batch_size: 2
+  shard_size: 128
+decoder:
+  model: Qwen/Qwen3-0.6B-Base
+  revision: da87bfb608c14b7cf20ba1ce41287e8de496c0cd
+  max_length: 192
+  lora_rank: 8
+  gradient_checkpointing: true
+latent:
+  tokens: 8
+  dim: 256
+  width: 256
+  noise: 0.05
+  variance_weight: 0.05
+  min_std: 0.12
+diffusion:
+  timesteps: 1000
+  steps: 40
+  width: 384
+  depth: 4
+  conditional: false
+  condition_dropout: 0.1
+  view_fraction: 0.65
+autoencoder_train:
+  batch_size: 1
+  accumulation: 16
+  epochs: 20
+  lr: 0.0003
+  patience: 4
+diffusion_train:
+  batch_size: 32
+  accumulation: 2
+  epochs: 80
+  lr: 0.0003
+  patience: 12

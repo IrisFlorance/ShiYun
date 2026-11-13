@@ -1,0 +1,15 @@
+.venv*/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+.env
+.env.*
+*.egg-info/
+checkpoints/
+experiments/*
+!experiments/VERIFICATION.md
+data/prepared/
+data/cache/
+data/raw/
+!experiments/PUBLIC_V1.md
+!experiments/PUBLIC_50K.md

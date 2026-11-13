@@ -1,0 +1,16 @@
+extends: default.yaml
+encoder:
+  batch_size: 1
+  max_length: 160
+decoder:
+  max_length: 128
+  gradient_checkpointing: true
+autoencoder_train:
+  batch_size: 1
+  accumulation: 8
+diffusion:
+  width: 256
+  depth: 3
+diffusion_train:
+  batch_size: 8
+  accumulation: 4
